@@ -24,12 +24,13 @@ print(email_list({"gmail.com": ["clark.kent", "diana.prince", "peter.parker"], "
 def groups_per_user(group_dictionary):
 	user_groups = {}
 	# Go through group_dictionary
-	for ___:
+	for group, users in group_dictionary.items():
 		# Now go through the users in the group
-		for ___:
-			# Now add the group to the the list of
-# groups for this user, creating the entry
-# in the dictionary if necessary
+		for user in users:
+			if user in user_groups.keys():
+				user_groups[user].append(group)
+			else:
+				user_groups[user] = [group]
 
 	return(user_groups)
 
